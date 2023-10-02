@@ -12,12 +12,15 @@ app.get('/', (req, res) => {
     res.send('Hello world to my demo dfs server');
 });
 
-
 app.post('/monitor', (req, res) => {
-    // Return a JSON object with the specified properties
+    // Generate a timestamp
+    const timestamp = new Date().toISOString();
+
+    // Return a JSON object with the specified properties, including the timestamp
     const responseObject = {
         message: 'Select service or host',
-        status: 1
+        status: 1,
+        timestamp: timestamp
     };
 
     res.json(responseObject);
